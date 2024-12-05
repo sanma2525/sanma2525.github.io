@@ -52,24 +52,28 @@
 
 @keyframes zoomOut_op {
     0% {
-        font-size: 150pt;
+        font-size: 125pt;
         opacity: 0;
     }
 
     25% {
         opacity: 1;
-        font-size: 100pt;
+        font-size: 75pt;
     }
 
     75% {
         opacity: 1;
-        font-size: 100pt;
+        font-size: 75pt;
     }
 
     100% {
-        font-size:150pt;
+        font-size:100pt;
         opacity: 0;
     }
+}
+
+#indent{
+    text-indent: 4em;
 }
 
 #OP {
@@ -102,7 +106,7 @@
     height:100%;
     margin-top:20%;
     text-align:center;
-    font-size: 100pt;
+    font-size: 50pt;
     color:black;
     font-family:CLURBANTIK;
     z-index: 11;
@@ -115,7 +119,7 @@ header {
     animation:slideIn 1s ease-in-out forwards;
     position: relative;
     display:flex;
-    width: 100%;
+    width: 100vw;
     height: 60px;
     background-image: linear-gradient(135deg, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 1) 86%, rgba(255, 255, 255, 1) 86%);
     border: 2px solid;
@@ -166,13 +170,28 @@ header {
     margin: 0 0 0 0;
 }
 
+#tabs{
+    position:absolute;
+    display:inline-block;
+    margin: 2px 0 0 2px;
+}
+
+button{
+    background-color:white;
+    border:3px solid black;
+    padding: 2px;
+    border-radius: 4px 4px;
+    font-size:20pt;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
 #clock {
     position: absolute;
     right: 10px;
     width: auto;
     height: auto;
     padding: 0 4px 0 4px;
-    font-size: 40pt;
+    font-size: 20pt;
     font-family: CLURBANTIK;
     border-radius: 10px 10px;
     color: ghostwhite;
@@ -203,4 +222,6 @@ header {
 footer{
     position:absolute;
     bottom: 10px;
+    left:10px;
+    color: rgba(0,0,0,100);
 }
