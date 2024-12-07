@@ -1,4 +1,10 @@
-
+function isSmartPhone() {
+	if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 
 function sleepSetTimeout(ms, callback) {
@@ -7,18 +13,22 @@ function sleepSetTimeout(ms, callback) {
 
 //OP用
 function OP() {
+	var OP = document.getElementById("OP");
+	var OP_text = document.getElementById("op_text");
+	var OP_front = document.getElementById("op_front");
+	var header = document.getElementById("header");
+	var contents = document.getElementById("contents");
+	var style = document.getElementById("style");
+
+	if (isSmartPhone()) {
+		style.innerHTML = '<link rel="stylesheet" href="./style_phone.css">';
+	}
 
 	function EndOP() {
 		OP.className = "";
 		header.style = "display:flex;";
 		contents.style = "display:block;";
 	}
-
-	var OP = document.getElementById("OP");
-	var OP_text = document.getElementById("op_text");
-	var OP_front = document.getElementById("op_front");
-	var header = document.getElementById("header");
-	var contents = document.getElementById("contents");
 
 	if (!sessionStorage.getItem('firstVisit')) {
 		// 初回訪問の場合、セッションストレージにフラグをセット
