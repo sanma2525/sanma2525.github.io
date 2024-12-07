@@ -1,12 +1,19 @@
 ﻿body {
     position: fixed;
     margin: 0 0;
-    background-color: white;
-    font: 300;
+    background-color: rgba(0,0,0,0);
     width: 100%;
     height: auto;
     font-family: 'Yu Mincho';
     font-size:12pt;
+}
+
+canvas {
+    position: fixed;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
@@ -167,6 +174,7 @@ header {
     animation: fadeIn 1s ease-in-out forwards;
     margin: 0 0 0 0;
     overflow:scroll;
+    background-color: rgba(255,255,255,0.4);
 }
 
 #tabs{
