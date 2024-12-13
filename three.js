@@ -1,10 +1,11 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js";
 
 // サイズを指定
-const width = 1920;
-const height = 1080;
+const width = screen.width;
+const height = scree.height;
 // 希望のFPSの上限を設定する
 const maxFPS = 60;
+var num = 0;
 
 // レンダラーを作成
 const renderer = new THREE.WebGLRenderer({
@@ -54,10 +55,11 @@ function animate() {
     // 例えば、controlsの更新を呼び出してカメラの位置を更新する場合は以下のようにします
 
     requestAnimationFrame(animate);
-
     // アニメーション処理をここに書く
     box.rotation.y += 0.01;
     box.rotation.x += 0.01;
+    box.position.y += 10 * Math.sin(num);
+    num += 0.1;
     renderer.render(scene, camera);
 }
 
