@@ -23,7 +23,7 @@ const camera = new THREE.PerspectiveCamera(45, width / height);
 camera.position.set(0, 0, +1000);
 
 // 箱を作成
-const geometry = new THREE.BoxGeometry(400, 400, 400);
+const geometry = new THREE.BoxGeometry(300,300,300);
 const material = new THREE.MeshNormalMaterial();
 const box = new THREE.Mesh(geometry, material);
 scene.add(box);
@@ -31,6 +31,8 @@ scene.add(box);
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
 
+console.log(box.position.x);
+console.log(box.position.y);
 
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
@@ -55,7 +57,7 @@ function animate() {
 
     // アニメーション処理をここに書く
     box.rotation.y += 0.01;
-
+    box.rotation.x += 0.01;
     renderer.render(scene, camera);
 }
 
