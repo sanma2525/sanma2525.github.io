@@ -2,7 +2,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.m
 
 // サイズを指定
 const width = screen.width;
-const height = scree.height;
+const height = screen.height;
 // 希望のFPSの上限を設定する
 const maxFPS = 60;
 var num = 0;
