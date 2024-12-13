@@ -58,7 +58,7 @@ function animate() {
     // アニメーション処理をここに書く
     box.rotation.y += 0.01;
     box.rotation.x += 0.01;
-    box.position.y += 4 * Math.sin(num);
+    box.position.y += 2 * Math.sin(num);
     num += 0.1;
     renderer.render(scene, camera);
 }
