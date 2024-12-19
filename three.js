@@ -26,7 +26,8 @@ camera.position.set(0, 0, +1000);
 // î†ÇçÏê¨
 
 class Box {
-    Box(sizex, sizey, sizez, positionx, positiony, positionz) {  this.sizex = sizex;
+    constructor(sizex, sizey, sizez, positionx, positiony, positionz) {
+        this.sizex = sizex;
         this.sizey = sizey;
         this.sizez = sizez;
         this.positionx = positionx;
