@@ -26,23 +26,41 @@ camera.position.set(0, 0, +1000);
 // 箱を作成
 
 class Box {
-    method() {
-        function createBox(var sizex,var sizey, var sizez) {
-            const geometry = new THREE.BoxGeometry(300, 300, 300);
+    Box(sizex, sizey, sizez, positionx, positiony, positionz) {  this.sizex = sizex;
+        this.sizey = sizey;
+        this.sizez = sizez;
+        this.positionx = positionx;
+        this.positiony = positiony;
+        this.positionz = positionz;
+    }
+
+    CreateBox() {
+        const geometry = new THREE.BoxGeometry(this.sizex, this.sizey, this.sizez);
         const material = new THREE.MeshNormalMaterial();
-        const box = new THREE.Mesh(geometry, material);
-        scene.add(box);
-
-        const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        scene.add(light);
-
+        this.box = new THREE.Mesh(geometry, material);
+        scene.add(this.box);
+        this.box.position.x = this.positionx;
+        this.box.position.y = this.positiony;
+        this.box.position.z = this.positionz;
         console.log(box.position.x);
         console.log(box.position.y);
     }
+
 }
-}
+
+
+var Box1 = Box(200, 200, 200, -100, 200, 0);
+var Box2 = Box(100, 100, 100, 100, -200, 0);
+var Box3 = Box(300, 300, 300, 0, 0, 0);
+
+Box1.CreateBox();
+Box2.CreateBox();
+Box3.CreateBox();
+
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
+const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
+scene.add(light);
 function animate() {
 
     const now = performance.now();
@@ -59,9 +77,9 @@ function animate() {
     // この中に描画処理やアニメーションなどを記述します
     // 例えば、controlsの更新を呼び出してカメラの位置を更新する場合は以下のようにします
     // アニメーション処理をここに書く
-    box.rotation.y += 0.01;
-    box.rotation.x += 0.01;
-    box.position.y += 4 * Math.sin(num);
+    Box1.box.rotation.y += 0.01;
+    Box2.box.rotation.x += 0.01;
+    Box3.box.position.y += 4 * Math.sin(num);
     num += 0.1;
     renderer.render(scene, camera);
 
