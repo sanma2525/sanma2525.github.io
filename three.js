@@ -26,49 +26,58 @@ camera.position.set(0, 0, +1000);
 // 箱を作成
 
 class Box {
-    constructor(sizex, sizey, sizez, positionx, positiony, positionz) {
+    constructor({ sizex, sizey, sizez, positionx, positiony, positionz }) {
         this.sizex = sizex;
         this.sizey = sizey;
         this.sizez = sizez;
         this.positionx = positionx;
         this.positiony = positiony;
         this.positionz = positionz;
+        this.box = null; // boxオブジェクトを後で初期化する
     }
 
-    CreateBox() {
+    createBox() {
         const geometry = new THREE.BoxGeometry(this.sizex, this.sizey, this.sizez);
         const material = new THREE.MeshNormalMaterial();
         this.box = new THREE.Mesh(geometry, material);
-        scene.add(this.box);
-        this.box.position.x = this.positionx;
-        this.box.position.y = this.positiony;
-        this.box.position.z = this.positionz;
-        console.log(box.position.x);
-        console.log(box.position.y);
+        this.box.position.set(this.positionx, this.positiony, this.positionz);
+        return this.box;
     }
-
 }
 
+// 使用例
+// Boxの設定を配列でまとめる
+const boxConfigs = [
+    { sizex: 200, sizey: 200, sizez: 200, positionx: -100, positiony: 200, positionz: 0 },
+    { sizex: 100, sizey: 100, sizez: 100, positionx: 100, positiony: -200, positionz: 0 },
+    { sizex: 300, sizey: 300, sizez: 300, positionx: 0, positiony: 0, positionz: 0 }
+];
 
-var Box1 = new Box(200, 200, 200, -100, 200, 0);
-var Box2 = new Box(100, 100, 100, 100, -200, 0);
-var Box3 = new Box(300, 300, 300, 0, 0, 0);
+// Boxをループで作成してシーンに追加
+const boxes = boxConfigs.map(config => {
+    const box = new Box(config);
+    scene.add(box.createBox());
+    return box;
+});
 
-Box1.CreateBox();
-Box2.CreateBox();
-Box3.CreateBox();
+// Boxを作成してシーンに追加
+scene.add(Box1.createBox());
+scene.add(Box2.createBox());
+scene.add(Box3.createBox());
+
 
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
 function animate() {
-
+    requestAnimationFrame(animate);
     const now = performance.now();
     const deltaTime = now - lastUpdateTime;
 
     // 前回のフレームとの時間差分を基準にFPSを制御する
     if (deltaTime < 1000 / maxFPS) {
+        requestAnimationFrame(animate);
         return;
     }
 
@@ -76,15 +85,12 @@ function animate() {
 
     // フレーム更新の処理を実行する
     // この中に描画処理やアニメーションなどを記述します
-    // 例えば、controlsの更新を呼び出してカメラの位置を更新する場合は以下のようにします
-    // アニメーション処理をここに書く
     Box1.box.rotation.y += 0.01;
     Box2.box.rotation.x += 0.01;
     Box3.box.position.y += 4 * Math.sin(num);
     num += 0.1;
-    renderer.render(scene, camera);
 
-    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
 }
 
 animate();
