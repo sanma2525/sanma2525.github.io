@@ -50,9 +50,9 @@ class Box {
 }
 
 
-var Box1 = Box(200, 200, 200, -100, 200, 0);
-var Box2 = Box(100, 100, 100, 100, -200, 0);
-var Box3 = Box(300, 300, 300, 0, 0, 0);
+var Box1 = new Box(200, 200, 200, -100, 200, 0);
+var Box2 = new Box(100, 100, 100, 100, -200, 0);
+var Box3 = new Box(300, 300, 300, 0, 0, 0);
 
 Box1.CreateBox();
 Box2.CreateBox();
