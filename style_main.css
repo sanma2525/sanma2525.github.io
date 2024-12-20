@@ -95,6 +95,10 @@ header {
 	background-color: rgba(255,255,255,0.6);
 }
 
+#contents_text{
+	background-color: rgba(255,255,255,0.5);
+}
+
 #tabs {
 	position: absolute;
 	display: inline-block;
