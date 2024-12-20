@@ -60,12 +60,6 @@ const boxes = boxConfigs.map(config => {
     return box;
 });
 
-// Boxを作成してシーンに追加
-scene.add(Box1.createBox());
-scene.add(Box2.createBox());
-scene.add(Box3.createBox());
-
-
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
