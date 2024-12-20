@@ -80,13 +80,15 @@ function animate() {
     boxes.forEach((box, index) => {
         if (box.box) {
             if (index === 0) {
+                box.box.rotation.z -= 0.01; // Box1‚É‘Š“–
                 box.box.rotation.y += 0.01; // Box1‚É‘Š“–
                 box.box.rotation.x += 0.01; // Box1‚É‘Š“–
+                box.box.position.y += 4 * Math.sin(num +0.2); // Box3‚É‘Š“–
             } else if (index === 1) {
-                box.box.rotation.x += 0.01; // Box2‚É‘Š“–
-                box.box.rotation.y += 0.01; // Box2‚É‘Š“–
+                box.box.rotation.x += 0.02; // Box2‚É‘Š“–
+                box.box.rotation.y -= 0.01; // Box2‚É‘Š“–
+                box.box.position.y += 4 * Math.sin(num + 0.1); // Box3‚É‘Š“–
             } else if (index === 2) {
-                box.box.rotation.x += 0.01;
                 box.box.rotation.y += 0.01;
                 box.box.position.y += 4 * Math.sin(num); // Box3‚É‘Š“–
             }
