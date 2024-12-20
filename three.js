@@ -75,19 +75,26 @@ function animate() {
     const now = performance.now();
     const deltaTime = now - lastUpdateTime;
 
-    // 前回のフレームとの時間差分を基準にFPSを制御する
+    // FPSを制御
     if (deltaTime < 1000 / maxFPS) {
-        requestAnimationFrame(animate);
         return;
     }
 
     lastUpdateTime = now - (deltaTime % (1000 / maxFPS));
 
-    // フレーム更新の処理を実行する
-    // この中に描画処理やアニメーションなどを記述します
-    Box1.box.rotation.y += 0.01;
-    Box2.box.rotation.x += 0.01;
-    Box3.box.position.y += 4 * Math.sin(num);
+    // boxes 配列を使って各ボックスを操作
+    boxes.forEach((box, index) => {
+        if (box.box) {
+            if (index === 0) {
+                box.box.rotation.y += 0.01; // Box1に相当
+            } else if (index === 1) {
+                box.box.rotation.x += 0.01; // Box2に相当
+            } else if (index === 2) {
+                box.box.position.y += 4 * Math.sin(num); // Box3に相当
+            }
+        }
+    });
+
     num += 0.1;
 
     renderer.render(scene, camera);
