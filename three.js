@@ -48,8 +48,8 @@ class Box {
 // égópó·
 // BoxÇÃê›íËÇîzóÒÇ≈Ç‹Ç∆ÇﬂÇÈ
 const boxConfigs = [
-    { sizex: 200, sizey: 200, sizez: 200, positionx: -100, positiony: 200, positionz: 0 },
-    { sizex: 100, sizey: 100, sizez: 100, positionx: 100, positiony: -200, positionz: 0 },
+    { sizex: 200, sizey: 200, sizez: 200, positionx: -400, positiony: 200, positionz: 0 },
+    { sizex: 100, sizey: 100, sizez: 100, positionx: 400, positiony: -200, positionz: 0 },
     { sizex: 300, sizey: 300, sizez: 300, positionx: 0, positiony: 0, positionz: 0 }
 ];
 
@@ -81,9 +81,13 @@ function animate() {
         if (box.box) {
             if (index === 0) {
                 box.box.rotation.y += 0.01; // Box1Ç…ëäìñ
+                box.box.rotation.x += 0.01; // Box1Ç…ëäìñ
             } else if (index === 1) {
                 box.box.rotation.x += 0.01; // Box2Ç…ëäìñ
+                box.box.rotation.y += 0.01; // Box2Ç…ëäìñ
             } else if (index === 2) {
+                box.box.rotation.x += 0.01;
+                box.box.rotation.y += 0.01;
                 box.box.position.y += 4 * Math.sin(num); // Box3Ç…ëäìñ
             }
         }
