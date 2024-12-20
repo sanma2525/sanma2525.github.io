@@ -112,6 +112,7 @@ function animate() {
             }
         }
     });
+    cone_geometry.position.z = 100;
     cone_geometry.rotation.x += 0.3;
     cone_geometry.rotation.y += 0.3;
     num += 0.1;
