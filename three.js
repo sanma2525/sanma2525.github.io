@@ -1,6 +1,7 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js";
 
 // サイズを指定
+const canvas = document.querySelector("#background");
 const width = screen.innerWidth;
 const height = screen.innerHeight;
 // 希望のFPSの上限を設定する
