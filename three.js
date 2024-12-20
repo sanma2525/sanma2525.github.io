@@ -77,8 +77,11 @@ const boxes = boxConfigs.map(config => {
 
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
+//三角錐
 const cone_geometry = new THREE.ConeGeometry(40, 40, 128);
-scene.add(cone_geometry);
+const material = new THREE.MeshNormalMaterial();
+cone = new THREE.Mesh(cone_geometry, material);
+scene.add(cone);
 
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
@@ -112,9 +115,9 @@ function animate() {
             }
         }
     });
-    cone_geometry.position.z = 100;
-    cone_geometry.rotation.x += 0.3;
-    cone_geometry.rotation.y += 0.3;
+    cone.position.z = 100;
+    cone.rotation.x += 0.3;
+    cone.rotation.y += 0.3;
     num += 0.1;
 
     renderer.render(scene, camera);
