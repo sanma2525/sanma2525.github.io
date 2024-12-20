@@ -80,7 +80,7 @@ let lastUpdateTime = performance.now(); // 前回のフレームの時間
 //三角錐
 const cone_geometry = new THREE.ConeGeometry(40, 40, 128);
 const material = new THREE.MeshNormalMaterial();
-cone = new THREE.Mesh(cone_geometry, material);
+const cone = new THREE.Mesh(cone_geometry, material);
 scene.add(cone);
 
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
