@@ -59,6 +59,7 @@ class Box {
     }
 }
 
+
 // 使用例
 // Boxの設定を配列でまとめる
 const boxConfigs = [
@@ -75,6 +76,9 @@ const boxes = boxConfigs.map(config => {
 });
 
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
+
+const cone_geometry = new THREE.ConeGeometry(40, 40, 128);
+scene.add(cone_geometry);
 
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
@@ -108,7 +112,8 @@ function animate() {
             }
         }
     });
-
+    cone_geometry.rotation.x += 0.3;
+    cone_geometry.rotation.y += 0.3;
     num += 0.1;
 
     renderer.render(scene, camera);
