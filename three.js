@@ -2,8 +2,18 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.m
 
 // サイズを指定
 const canvas = document.querySelector("#background");
-const width = screen.innerWidth;
-const height = screen.innerHeight;
+let width = window.innerWidth; // let に変更
+let height = window.innerHeight; // let に変更
+
+// リサイズ対応
+window.addEventListener("resize", () => {
+    width = window.innerWidth; // 再代入可能
+    height = window.innerHeight; // 再代入可能
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+});
+
 // 希望のFPSの上限を設定する
 const maxFPS = 60;
 var num = 0;
@@ -26,15 +36,6 @@ scene.background = new THREE.Color(0xFFFFFF);
 // カメラを作成
 const camera = new THREE.PerspectiveCamera(45, width / height);
 camera.position.set(0, 0, +1000);
-
-// リサイズ対応
-window.addEventListener("resize", () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-});
 
 
 // 箱を作成
