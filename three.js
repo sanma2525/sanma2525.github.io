@@ -1,11 +1,12 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js";
 
 // サイズを指定
-const width = screen.innerwidth;
-const height = screen.innerheight;
+const width = screen.innerWidth;
+const height = screen.innerHeight;
 // 希望のFPSの上限を設定する
 const maxFPS = 60;
 var num = 0;
+
 
 // レンダラーを作成
 const renderer = new THREE.WebGLRenderer({
@@ -14,9 +15,11 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(width, height);
 
+canvas.style.width = `${width}px`; // 表示サイズを明示的に指定
+canvas.style.height = `${height}px`; // 同上
+
 // シーンを作成
 const scene = new THREE.Scene();
-
 scene.background = new THREE.Color(0xFFFFFF);
 
 // カメラを作成
