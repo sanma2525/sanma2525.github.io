@@ -17,7 +17,8 @@ window.addEventListener("resize", () => {
 // 希望のFPSの上限を設定する
 const maxFPS = 60;
 var num = 0;
-
+let countFlame = 0;
+let showFPS = 0;
 
 // レンダラーを作成
 const renderer = new THREE.WebGLRenderer({
@@ -92,11 +93,13 @@ function animate() {
 
     // FPSを制御
     if (deltaTime < 1000 / maxFPS) {
+        countFlame++;
         return;
     }
 
     lastUpdateTime = now - (deltaTime % (1000 / maxFPS));
 
+    console.log("FPS"+countFlame);
     // boxes 配列を使って各ボックスを操作
     boxes.forEach((box, index) => {
         if (box.box) {
