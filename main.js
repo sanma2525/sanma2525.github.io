@@ -13,12 +13,12 @@ function sleepSetTimeout(ms, callback) {
 
 //OP—p
 function OP() {
-	var OP = document.getElementById("OP");
-	var OP_text = document.getElementById("op_text");
-	var OP_front = document.getElementById("op_front");
-	var header = document.getElementById("header");
-	var contents = document.getElementById("contents");
-	var style = document.getElementById("style");
+	const OP = document.getElementById("OP");
+	const OP_text = document.getElementById("op_text");
+	const OP_front = document.getElementById("op_front");
+	const header = document.getElementById("header");
+	const contents = document.getElementById("contents");
+	const style = document.getElementById("style");
 
 	if (isSmartPhone()) {
 		style.innerHTML = '<link rel="stylesheet" href="./style_phone.css">';

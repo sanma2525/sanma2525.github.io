@@ -78,7 +78,7 @@ const boxes = boxConfigs.map(config => {
 let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
 //三角錐
-const cone_geometry = new THREE.ConeGeometry(40, 40, 128);
+const cone_geometry = new THREE.ConeGeometry(100, 200, 128);
 const coneMaterial = new THREE.MeshNormalMaterial();
 const coneMesh = new THREE.Mesh(cone_geometry, coneMaterial);
 scene.add(coneMesh);
@@ -115,7 +115,7 @@ function animate() {
             }
         }
     });
-    coneMesh.position.z = 100;
+    coneMesh.position.set(200, 200, -200);
     coneMesh.rotation.x += 0.3;
     coneMesh.rotation.y += 0.3;
     num += 0.1;

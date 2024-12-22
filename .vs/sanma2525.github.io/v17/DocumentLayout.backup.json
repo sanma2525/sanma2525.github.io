@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:three.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\style_phone.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:style_phone.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\gallery.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gallery.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hakus\\Source\\Repos\\sanma2525.github.io\\style_main.css||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:style_main.css||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\style_phone.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:style_phone.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -52,14 +52,14 @@
               "RelativeDocumentMoniker": "three.js",
               "ToolTip": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\three.js",
               "RelativeToolTip": "three.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAcwGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-13T01:55:08.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "style_main.css",
               "DocumentMoniker": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\style_main.css",
               "RelativeDocumentMoniker": "style_main.css",
@@ -71,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "gallery.html",
               "DocumentMoniker": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\gallery.html",
               "RelativeDocumentMoniker": "gallery.html",
@@ -79,8 +79,7 @@
               "RelativeToolTip": "gallery.html",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-05T23:28:19.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T23:28:19.769Z"
             },
             {
               "$type": "Document",
@@ -96,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\index.html",
               "RelativeDocumentMoniker": "index.html",
@@ -122,17 +121,21 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "style_phone.css",
               "DocumentMoniker": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\style_phone.css",
               "RelativeDocumentMoniker": "style_phone.css",
               "ToolTip": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\style_phone.css",
               "RelativeToolTip": "style_phone.css",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-12-10T23:47:18.514Z",
               "EditorCaption": ""
