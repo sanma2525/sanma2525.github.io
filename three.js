@@ -91,14 +91,14 @@ function animate() {
     const deltaTime = now - lastUpdateTime;
     requestAnimationFrame(animate);
     // FPSを制御
-    if (deltaTime < 1000 / maxFPS) {
+    if (deltaTime <= 1000 / maxFPS) {
         countFlame++;
         return;
     }
 
     lastUpdateTime = now - (deltaTime % (1000 / maxFPS));
 
-    console.log("FPS" + countFlame);
+    console.log("FPS:" + countFlame);
     countFlame = 0;
     // boxes 配列を使って各ボックスを操作
     boxes.forEach((box, index) => {
@@ -118,7 +118,7 @@ function animate() {
             }
         }
     });
-    coneMesh.position.set(200, 200, -200);
+    coneMesh.position.set(500, 200, -200);
     coneMesh.rotation.x += 0.3;
     coneMesh.rotation.y += 0.3;
     num += 0.1;
