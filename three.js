@@ -13,12 +13,7 @@ window.addEventListener("resize", () => {
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
 });
-
-// 希望のFPSの上限を設定する
-const maxFPS = 60;
-var num = 0;
-let countFlame = 0;
-let showFPS = 0;
+;
 
 // レンダラーを作成
 const renderer = new THREE.WebGLRenderer({
@@ -84,22 +79,37 @@ const coneMaterial = new THREE.MeshNormalMaterial();
 const coneMesh = new THREE.Mesh(cone_geometry, coneMaterial);
 scene.add(coneMesh);
 
+//ライト
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
+
+
+let lastUpdateTime = performance.now(); // 最後に更新した時間
+let fpsUpdateTime = performance.now(); // FPS計測開始時間
+let countFlame = 0; // フレーム数カウント
+const maxFPS = 60; // 最大FPS
+let num = 0; // アニメーション用変数
+
 function animate() {
     const now = performance.now();
     const deltaTime = now - lastUpdateTime;
-    requestAnimationFrame(animate);
+
     // FPSを制御
-    if (deltaTime <= 1000 / maxFPS) {
-        countFlame++;
-        return;
+    if (deltaTime < 1000 / maxFPS) {
+        requestAnimationFrame(animate);
+        return; // フレーム間隔が短すぎる場合はスキップ
     }
 
-    lastUpdateTime = performance.now();
+    lastUpdateTime = now;
 
-    console.log("FPS:" + countFlame);
-    countFlame = 0;
+    // FPSを1秒ごとに表示
+    countFlame++;
+    if (now - fpsUpdateTime >= 1000) { // 1秒経過したら
+        console.log("FPS: " + countFlame);
+        fpsUpdateTime = now; // FPS計測開始時間をリセット
+        countFlame = 0; // フレーム数をリセット
+    }
+
     // boxes 配列を使って各ボックスを操作
     boxes.forEach((box, index) => {
         if (box.box) {
@@ -107,7 +117,7 @@ function animate() {
                 box.box.rotation.z -= 0.01; // Box1に相当
                 box.box.rotation.y += 0.01; // Box1に相当
                 box.box.rotation.x += 0.04; // Box1に相当
-                box.box.position.y -= 2 * Math.sin(num +0.2); // Box3に相当
+                box.box.position.y -= 2 * Math.sin(num + 0.2); // Box3に相当
             } else if (index === 1) {
                 box.box.rotation.x -= 0.12; // Box2に相当
                 box.box.rotation.y -= 0.01; // Box2に相当
@@ -118,12 +128,20 @@ function animate() {
             }
         }
     });
+
+    // coneMeshの操作
     coneMesh.position.set(500, 200, -200);
     coneMesh.rotation.x += 0.3;
     coneMesh.rotation.y += 0.3;
+
+    // アニメーション変数の更新
     num += 0.1;
 
+    // シーンの描画
     renderer.render(scene, camera);
+
+    // 次のフレームをリクエスト
+    requestAnimationFrame(animate);
 }
 
 animate();
