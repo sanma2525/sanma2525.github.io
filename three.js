@@ -71,7 +71,6 @@ const boxes = boxConfigs.map(config => {
     return box;
 });
 
-let lastUpdateTime = performance.now(); // 前回のフレームの時間
 
 //三角錐
 const cone_geometry = new THREE.ConeGeometry(100, 200, 128);
@@ -99,11 +98,10 @@ function animate() {
         requestAnimationFrame(animate);
         return; // フレーム間隔が短すぎる場合はスキップ
     }
-
+    countFlame++;
     lastUpdateTime = now;
 
     // FPSを1秒ごとに表示
-    countFlame++;
     if (now - fpsUpdateTime >= 1000) { // 1秒経過したら
         console.log("FPS: " + countFlame);
         fpsUpdateTime = now; // FPS計測開始時間をリセット
