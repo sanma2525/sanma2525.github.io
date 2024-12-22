@@ -96,7 +96,7 @@ function animate() {
         return;
     }
 
-    lastUpdateTime = now - (deltaTime % (1000 / maxFPS));
+    lastUpdateTime = performance.now();
 
     console.log("FPS:" + countFlame);
     countFlame = 0;
