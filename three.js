@@ -87,10 +87,9 @@ scene.add(coneMesh);
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
 function animate() {
-    requestAnimationFrame(animate);
     const now = performance.now();
     const deltaTime = now - lastUpdateTime;
-
+    requestAnimationFrame(animate);
     // FPSを制御
     if (deltaTime < 1000 / maxFPS) {
         countFlame++;
@@ -99,7 +98,8 @@ function animate() {
 
     lastUpdateTime = now - (deltaTime % (1000 / maxFPS));
 
-    console.log("FPS"+countFlame);
+    console.log("FPS" + countFlame);
+    countFlame = 0;
     // boxes 配列を使って各ボックスを操作
     boxes.forEach((box, index) => {
         if (box.box) {
