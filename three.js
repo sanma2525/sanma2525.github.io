@@ -129,8 +129,9 @@ function animate() {
 
     // coneMeshの操作
     coneMesh.position.set(500, 200, -200);
-    coneMesh.rotation.x += 0.3;
-    coneMesh.rotation.y += 0.3;
+    coneMesh.rotation.x += 0.1;
+    coneMesh.rotation.y += 0.1;
+    coneMesh.rotation.z += 0.1;
 
     // アニメーション変数の更新
     num += 0.1;
