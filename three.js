@@ -24,40 +24,41 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(width, height);
-renderer.physicallyCorrectLights = true; // 光の計算をリアルにする
+renderer.physicallyCorrectLights = true;
 
 canvas.style.width = `${width}px`;
 canvas.style.height = `${height}px`;
 
 // シーンを作成
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xFFFFFF);
+scene.background = new THREE.Color(0xFFF5F5); // やわらかい背景色（ホワイトピンク）
 
 // カメラを作成
 const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
 camera.position.set(0, 0, +1000);
 
-// ライトを作成
-const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.5); // 環境光（弱め）
-const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.5); // 平行光源（強め）
-directionalLight.position.set(1, 1, 1);
-scene.add(ambientLight, directionalLight);
+// **パステルカラーのカラフルなボックスを作成**
+const pastelColors = [0xffc0cb, 0xffd700, 0xadd8e6, 0x98fb98, 0xe6e6fa]; // ピンク, イエロー, ライトブルー, ミント, ラベンダー
 
-// 箱を作成
 class Box {
-    constructor({ sizex, sizey, sizez, positionx, positiony, positionz }) {
+    constructor({ sizex, sizey, sizez, positionx, positiony, positionz, color }) {
         this.sizex = sizex;
         this.sizey = sizey;
         this.sizez = sizez;
         this.positionx = positionx;
         this.positiony = positiony;
         this.positionz = positionz;
+        this.color = color;
         this.box = null;
     }
 
     createBox() {
         const geometry = new THREE.BoxGeometry(this.sizex, this.sizey, this.sizez);
-        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, metalness: 0.7, roughness: 0.2 });
+        const material = new THREE.MeshStandardMaterial({
+            color: this.color,
+            metalness: 0.2,
+            roughness: 0.8
+        });
         this.box = new THREE.Mesh(geometry, material);
         this.box.position.set(this.positionx, this.positiony, this.positionz);
         return this.box;
@@ -66,9 +67,9 @@ class Box {
 
 // Boxの設定
 const boxConfigs = [
-    { sizex: 200, sizey: 200, sizez: 200, positionx: -400, positiony: 200, positionz: 0 },
-    { sizex: 100, sizey: 100, sizez: 100, positionx: 400, positiony: -200, positionz: 0 },
-    { sizex: 300, sizey: 300, sizez: 300, positionx: 0, positiony: 0, positionz: 0 }
+    { sizex: 200, sizey: 200, sizez: 200, positionx: -400, positiony: 200, positionz: 0, color: pastelColors[0] },
+    { sizex: 100, sizey: 100, sizez: 100, positionx: 400, positiony: -200, positionz: 0, color: pastelColors[1] },
+    { sizex: 300, sizey: 300, sizez: 300, positionx: 0, positiony: 0, positionz: 0, color: pastelColors[2] }
 ];
 
 const boxes = boxConfigs.map(config => {
@@ -77,17 +78,24 @@ const boxes = boxConfigs.map(config => {
     return box;
 });
 
-// 三角錐
+// 三角錐（パステルパープル）
 const cone_geometry = new THREE.ConeGeometry(100, 200, 128);
-const coneMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000, metalness: 0.5, roughness: 0.3 });
+const coneMaterial = new THREE.MeshStandardMaterial({ color: 0xe6e6fa, metalness: 0.2, roughness: 0.9 });
 const coneMesh = new THREE.Mesh(cone_geometry, coneMaterial);
 scene.add(coneMesh);
 
-// ドーナツ型
+//ドーナツ型（パステルオレンジ
 const torus_geometry = new THREE.TorusGeometry(100, 40, 16, 100);
-const torusMaterial = new THREE.MeshStandardMaterial({ color: 0xff6347, metalness: 0.8, roughness: 0.2 });
+const torusMaterial = new THREE.MeshStandardMaterial({ color: 0xffdab9, metalness: 0.2, roughness: 0.8 });
 const torus = new THREE.Mesh(torus_geometry, torusMaterial);
 scene.add(torus);
+
+//ライト（やわらかい雰囲気にするためにピンクの環境光を追加
+const ambientLight = new THREE.AmbientLight(0xffe6e6, 0.8); // ピンク系の環境光
+const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.2);
+directionalLight.position.set(1, 1, 1);
+scene.add(ambientLight, directionalLight);
+
 
 let lastUpdateTime = performance.now();
 let fpsUpdateTime = performance.now();
@@ -99,6 +107,7 @@ function animate() {
     const now = performance.now();
     const deltaTime = now - lastUpdateTime;
 
+    //fps制御
     if (deltaTime < 1000 / maxFPS) {
         requestAnimationFrame(animate);
         return;
@@ -106,6 +115,11 @@ function animate() {
     countFlame++;
     lastUpdateTime = now;
 
+    //torusのループ
+    if (camera.positionz + 10 < torus.positionz) {
+        torus.positionz = 0;
+    }
+    //flamelate counter
     if (now - fpsUpdateTime >= 1000) {
         console.log("FPS: " + countFlame);
         fpsUpdateTime = now;
@@ -140,8 +154,7 @@ function animate() {
     coneMesh.rotation.z += 0.1;
 
     // ドーナツ型のアニメーション
-    torus.rotation.x += 0.03;
-    torus.rotation.y += 0.02;
+    torus.positionz += 1;
 
     num += 0.1;
     renderer.render(scene, camera);
