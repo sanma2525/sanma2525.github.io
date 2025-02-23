@@ -5,6 +5,9 @@ const canvas = document.querySelector("#background");
 let width = window.innerWidth; // let に変更
 let height = window.innerHeight; // let に変更
 
+let camera_x = 0;
+let camera_y = 0;
+
 // リサイズ対応
 window.addEventListener("resize", () => {
     width = window.innerWidth; // 再代入可能
@@ -30,7 +33,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xFFFFFF);
 
 // カメラを作成
-const camera = new THREE.PerspectiveCamera(45, width / height);
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
 camera.position.set(0, 0, +1000);
 
 
@@ -78,6 +81,12 @@ const coneMaterial = new THREE.MeshNormalMaterial();
 const coneMesh = new THREE.Mesh(cone_geometry, coneMaterial);
 scene.add(coneMesh);
 
+//ドーナツ型
+const geometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
+const material = new THREE.MeshStandardMaterial({ color: 0xff6347, metalness: 0.5, roughness: 0.5 });
+const torus = new THREE.Mesh(geometry, material);
+scene.add(torus);
+
 //ライト
 const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
 scene.add(light);
@@ -101,6 +110,10 @@ function animate() {
     countFlame++;
     lastUpdateTime = now;
 
+    if (camera.positionz + 10 < torus.positionz) {
+        camera.positionz = 0;
+    }
+
     // FPSを1秒ごとに表示
     if (now - fpsUpdateTime >= 1000) { // 1秒経過したら
         console.log("FPS: " + countFlame);
@@ -121,9 +134,9 @@ function animate() {
                 box.box.rotation.y -= 0.01; // Box2に相当
                 box.box.position.y -= 4 * Math.sin(num + 0.1); // Box3に相当
             } else if (index === 2) {
-                box.box.rotation.y += 0.01;
-                box.box.rotation.x -= 0.02; // Box2に相当
-                box.box.rotation.z -= 0.04;
+                box.box.rotation.z -= 0.01; // Box1に相当
+                box.box.rotation.y += 0.02; // Box1に相当
+                box.box.rotation.x += 0.03; // Box1に相当
                 box.box.position.y += 4 * Math.sin(num); // Box3に相当
             }
         }
@@ -135,6 +148,8 @@ function animate() {
     coneMesh.rotation.y += 0.1;
     coneMesh.rotation.z += 0.1;
 
+    //torus
+    torus.positionz += 1;
     // アニメーション変数の更新
     num += 0.1;
 
