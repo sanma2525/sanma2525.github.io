@@ -83,6 +83,7 @@ const cone_geometry = new THREE.ConeGeometry(100, 200, 128);
 const coneMaterial = new THREE.MeshStandardMaterial({ color: 0xe6e6fa, metalness: 0.2, roughness: 0.9 });
 const coneMesh = new THREE.Mesh(cone_geometry, coneMaterial);
 scene.add(coneMesh);
+coneMesh.position.set(300, 300, 0);
 
 //ドーナツ型（パステルオレンジ
 const torus_geometry = new THREE.TorusGeometry(100, 40, 16, 100);
@@ -116,8 +117,8 @@ function animate() {
     lastUpdateTime = now;
 
     //torusのループ
-    if (camera.positionz + 10 < torus.positionz) {
-        torus.positionz = 0;
+    if (camera.position.z + 10 > torus.position.z) {
+        torus.position.z = 0;
     }
     //flamelate counter
     if (now - fpsUpdateTime >= 1000) {
@@ -154,7 +155,7 @@ function animate() {
     coneMesh.rotation.z += 0.1;
 
     // ドーナツ型のアニメーション
-    torus.positionz += 1;
+    torus.position.z += 10;
 
     num += 0.1;
     renderer.render(scene, camera);
