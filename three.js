@@ -31,7 +31,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xFFF5F5);
 
 // カメラを作成
-const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 3000);
 camera.position.set(0, 0, +1000);
 
 // **MeshNormalMaterial を全オブジェクトに適用**

@@ -38,12 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 227,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -52,7 +48,7 @@
               "RelativeDocumentMoniker": "three.js",
               "ToolTip": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\three.js",
               "RelativeToolTip": "three.js",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAmwJoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-13T01:55:08.032Z",
               "EditorCaption": ""
@@ -67,8 +63,7 @@
               "RelativeToolTip": "style_main.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-10T23:47:32.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T23:47:32.522Z"
             },
             {
               "$type": "Document",
@@ -80,8 +75,7 @@
               "RelativeToolTip": "gallery.html",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAACwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-05T23:28:19.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T23:28:19.769Z"
             },
             {
               "$type": "Document",
@@ -93,8 +87,7 @@
               "RelativeToolTip": "style_pc.css",
               "ViewState": "AgIAAHEAAAAAAAAAAAAAAHMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T23:55:05.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T23:55:05.292Z"
             },
             {
               "$type": "Document",
@@ -106,8 +99,7 @@
               "RelativeToolTip": "index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-04T23:55:01.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T23:55:01.055Z"
             },
             {
               "$type": "Document",
@@ -119,8 +111,7 @@
               "RelativeToolTip": "main.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-04T23:54:57.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T23:54:57.767Z"
             }
           ]
         },
