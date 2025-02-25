@@ -141,4 +141,15 @@ function animate() {
     // 三角錐のアニメーション
     coneMesh.rotation.x += 0.1;
     coneMesh.rotation.y += 0.1;
-    coneMesh.rotation.z +
+    coneMesh.rotation.z += 0.1;
+
+    // ドーナツ型のアニメーション
+    torus.position.z += 10;
+
+    num += 0.1;
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+}
+
+animate();
+s
