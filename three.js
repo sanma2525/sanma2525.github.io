@@ -118,7 +118,7 @@ function animate() {
 
     //torus‚Ìƒ‹[ƒv
     if (camera.position.z + 10 < torus.position.z) {
-        torus.position.z = 0;
+        torus.position.z = -700;
     }
     //flamelate counter
     if (now - fpsUpdateTime >= 1000) {
