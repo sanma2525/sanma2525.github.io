@@ -124,7 +124,7 @@ function animate() {
 
     boxes.forEach((box, index) => {
         box.updatePosition(20 + (index * 10));
-        box.updateRotation(0.02, 0.03, 0.01);
+        box.updateRotation((index - 2) / 100 +0.02, index / 100 + 0.03, index / 100 +0.01);
     });
 
     cone.mesh.rotation.x += 0.1;
