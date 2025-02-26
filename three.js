@@ -100,9 +100,11 @@ const torus = new CustomMesh(new THREE.TorusGeometry(200, 20, 16, 100), [0, 0, D
 // ライト
 scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.2);
-directionalLight.position.set(1, 1, 1);
+const directionalLight2 = new THREE.DirectionalLight(0xFFFFFF, 1.2);
+directionalLight.position.set(400, 100, 1000);
+directionalLight2.position.set(-400, 100, 1000);
 scene.add(directionalLight);
-
+scene.add(directionalLight2);
 // アニメーション
 let lastUpdateTime = performance.now();
 let lastUpdateTimeSecond = performance.now();
