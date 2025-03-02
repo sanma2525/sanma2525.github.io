@@ -94,7 +94,6 @@ const boxes = [
 ];
 
 // 三角錐とトーラス
-const cone = new CustomMesh(new THREE.ConeGeometry(100, 200, 128), [300, 300, 0]);
 const torus = new CustomMesh(new THREE.TorusGeometry(200, 20, 16, 100), [0, 0, DEFAULT_POSITION_Z]);
 
 // ライト
@@ -126,10 +125,6 @@ function animate() {
         box.updatePosition(20 + (index * 10));
         box.updateRotation((index - 2) / 100 +0.02, index / 100 + 0.03, index / 100 +0.01);
     });
-
-    cone.mesh.rotation.x += 0.1;
-    cone.mesh.rotation.y += 0.1;
-    cone.mesh.position.set((Math.random() * 2000) - 1000, (Math.random() * 500) - 1000, DEFAULT_POSITION_Z);
 
     if (torus.mesh.position.z > camera.position.z + 10) {
         torus.mesh.position.set(0,0, DEFAULT_POSITION_Z);

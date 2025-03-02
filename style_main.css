@@ -41,6 +41,12 @@ canvas {
 	}
 }
 
+#FPS{
+	position:fixed;
+	bottom:20px;
+	right:20px;
+}
+
 header {
 	animation: slideIn 1s ease-in-out forwards;
 	position: relative;
@@ -100,7 +106,7 @@ header {
 }
 
 #tabs {
-	position: absolute;
+	position: fixed;
 	display: inline-block;
 	margin: 2px 0 0 2px;
 }

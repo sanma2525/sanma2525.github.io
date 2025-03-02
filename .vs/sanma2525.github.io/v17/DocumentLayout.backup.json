@@ -37,7 +37,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 227,
+          "DockedWidth": 286,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "three.js",
               "ToolTip": "C:\\Users\\hakus\\source\\repos\\sanma2525.github.io\\three.js",
               "RelativeToolTip": "three.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAC8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-13T01:55:08.032Z",
               "EditorCaption": ""
@@ -116,7 +116,7 @@
           ]
         },
         {
-          "DockedWidth": 172,
+          "DockedWidth": 113,
           "SelectedChildIndex": 0,
           "Children": [
             {
