@@ -98,7 +98,7 @@ header {
 	animation: fadeIn 1s ease-in-out forwards;
 	margin: 0 0 0 0;
 	overflow: scroll;
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.3);
 }
 
 #contents_text{
