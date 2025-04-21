@@ -1,0 +1,375 @@
+:root{
+    --bg-color: #fff; /* 白 */
+    --transparent-bg: rgba(255, 255, 255, 0.5); /* 半透明の白 */
+    --transparent-bg-contents: rgba(255, 255, 255, 0.1); /* より薄い半透明の白 */
+    --text-color: #000; /* 黒 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color); /* 背景は白 */
+    color: var(--text-color); /* 文字は黒 */
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header{
+    position: relative;
+    display:  flex;
+    margin: 20px 10% 20px 10%;
+    background-color: var(--transparent-bg); /* 半透明の白 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width : 80%;
+    
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#title {
+    position: relative;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#link {
+    position: relative;
+    margin: 20px;
+    right: 0px;
+}
+
+.logos {
+    width: auto;
+    height: 50px;
+    margin-left: 10px;
+}
+
+#toggleDark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+}
+
+/* 本物のチェックボックスは隠す */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* スライダー（土台）のスタイル */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc5a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: .4s;
+  border-radius: 34px; /* 丸み */
+}
+
+/* 丸いツマミ部分（擬似要素） */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.473);
+}
+
+/* チェックが入った時の土台の色 */
+input:checked + .slider {
+  background-color: #2195f3cc;
+}
+
+/* チェックが入った時のツマミの移動 */
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* フォーカス時のアウトライン（アクセシビリティ対応） */
+input:focus + .slider {
+  box-shadow: 0 0 3px #2196F3;
+}
+
+h2{
+    margin: 20px 10px 30px 0;
+    text-decoration: underline;
+}
+
+#intro_text{
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    margin-bottom : 20px;
+}
+
+#intro_img{
+    position: relative;
+    top: 20%;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    /* ここが心臓部（50%指定） */
+     border-radius: 50%;
+     /* 画像が歪まないようにアスペクト比を維持 */
+     object-fit: cover;
+}
+
+#content {
+    position: relative;
+    margin: 0 5% 20px 5%;
+    background-color: var(--transparent-bg); /* 半透明の白 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width : 90%;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#introduce{
+    position: relative;
+    display:  flex;
+    margin: 10px 5% 10px 5%;
+    width: 90%;
+    height: 100%;
+    background-color: var(--transparent-bg-contents); /* 半透明の白 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#works{
+    position: relative;
+    display:  block;
+    margin: 20px 5% 20px 5%;
+    width: 90%;
+    height: 100%;
+    justify-content: space-between;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#video{
+    position: relative;
+    display:  block;
+    width: 100%;
+    background-color: var(--transparent-bg-contents); /* 半透明の白 */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+#video_text{
+    position: relative;
+    display:  block;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#illustrations{
+    position: relative;
+    display:  block;
+    width: 100%;
+    background-color: var(--transparent-bg-contents); /* 半透明の白 */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+#illustration_text{
+    position: relative;
+    display:  block;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#illustration_image{
+    position: relative;
+    display: flex;
+}
+
+#illustration_img{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: auto;
+}
+
+#art_title{
+    position: relative;
+    display: flex;
+}
+
+#art_title_text{
+    width: 720px;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+#program{
+    position: relative;
+    display:  block;
+    width: 100%;
+    background-color: var(--transparent-bg-contents); /* 半透明の白 */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+#program_text{
+    position: relative;
+    display:  block;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#program_list{
+    position: relative;
+    display:  block;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#links{
+    position: relative;
+    display:  block;
+    width: 100%;
+    background-color: var(--transparent-bg-contents); /* 半透明の白 */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+#links_text{
+    position: relative;
+    display:  block;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 背景を最背面に配置 */
+}
+
+.circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 共通設定: ぼかし効果のために透過度を持たせた放射状グラデーション */
+.circle1, .circle2, .circle3, .circle4 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px); 
+    animation: fadeCircleIn 3s forwards ease-in-out; 
+}
+
+/* --- 各円の個別設定 --- */
+
+.circle1 {
+    left: 20vw;
+    top: 25vh;
+    width: 30vw;
+    height: 30vw;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(12, 117, 255, 0.639) 15.62%, rgba(12, 119, 255, 0) 100%);
+}
+
+.circle2 {
+    left: 45vw;
+    top: 30vh;
+    width: 20vw;
+    height: 20vw;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 52, 62, 0.537) 15.62%, rgba(12, 119, 255, 0) 100%);
+}
+
+.circle3 {
+    left: 56vw;
+    top: 30vh;
+    width: 20vw;
+    height: 20vw;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(61, 255, 203, 0.644) 15.62%, rgba(65, 56, 210, 0) 100%);
+}
+
+.circle4 {
+    left: 40vw;
+    top: 40vh;
+    width: 15vw;
+    height: 15vw;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(244, 255, 27, 0.644) 15.62%, rgba(65, 56, 210, 0) 100%);
+}
+
+
+@keyframes fadeCircleIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#slider {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* スライダーを背景より前面に配置 */
+}

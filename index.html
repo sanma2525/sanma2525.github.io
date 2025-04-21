@@ -1,87 +1,132 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+    <head></head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>三分の一 / HappyWorld(Beta)</title>
+        <div id="style"><link rel="stylesheet" href="./style_pc.css"></div>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body onload="document.querySelectorAll('.circle1, .circle2, .circle3, .circle4').forEach(moveCircle)">
+        <div id="background">
+            <div class="circles">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+        <div id="OP">
+        </div>
+        <div id="main">
+            <header>
+                <div id="title">
+                    三分の一 / HappyWorld (Beta)
+                </div>
+                <div id="toggleDark">
+                        ダークモード<label class="switch">
+                        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div id="link">
+                    <a style="text-decoration: none;" href="https://twitter.com/HappyWorld1122" target="_blank">
+                        <img class="logos" src="logos/x-logo.png" alt="twitter" />
+                    </a>
+                    <a style="text-decoration: none;" href="https://youtube.com/@3bunno1" target="_blank">
+                        <img class="logos" src="logos/youtube.png" alt="YouTube" />
+                    </a>
+                </div>
+            </header>
+            <!--<div id="tabs">
+                <a href="#introduce" class="tab">自己紹介</a>
+                <a href="#videos" class="tab">動画</a>
+                <a href="#illustrations" class="tab">イラスト</a>
+            </div> -->
+            <div id="content">
+                <div id="introduce">
+                    <div id="intro_text">
+                        <h2>自己紹介</h2>
+                        <p>こんにちは、三分の一です。</p>
+                        <p>主にYoutubeで音楽を投稿したりしてますがサボりがち。</p>
+                        <p>世のアーティストはなにを食べたらそんなにどんどんアイデアを思いつくのか疑問です。</p>
+                        <p>それはそれとて趣味は創作活動。</p>
+                        <p>曲作り,動画編集,イラスト,プログラミング,あとすこし3DCGとか。</p>
+                        <p>浅く広く作っています。</p>
+                    </div>
+                    <div id="intro_image">
+                        <img id="intro_img" src="logos/icon.png" alt="アイコン画像" />
+                    </div>
+                </div>
 
-<html lang="jp">
-<head>
-    <meta charset="utf-8" />
-    <title>home</title>
-    <script type="importmap">
-        {
-          "imports": {
-            "lit": "https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js",
-            "react": "https://unpkg.com/react@18/umd/react.development.js",
-            "react-dom": "https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-          }
-        }
-    </script>
-    <link rel="stylesheet" href="./style_main.css">
-</head>
-<body onload="OP();">
-    <div id="style"><link rel="stylesheet" href="./style_pc.css"></div>
-    <header id="header" style="display:none">
-        <div id="text_header">三分の一 / HappyWorld (Beta)</div>
-        <div id="dark_toggle"></div>
-        <div id="link">
-            <a style="text-decoration: none;" href="./lowindex.html" target="_blank">軽量化サイト</a>
-            <a style="text-decoration: none;" href="https://twitter.com/HappyWorld1122" target="_blank">
-                <img class="logos" src="./x-logo.png" alt="twitter" />
-            </a>
-            <a style="text-decoration: none;" href="https://youtube.com/@3bunno1" target="_blank">
-                <img class="logos" src="./youtube.png" alt="YouTube" />
-            </a>
-        </div>
-    </header>
-    <div id="OP">
-        <div id="op_back"></div>
-        <div id="op_front">
-            <img src="./OP_front.png" />
-        </div>
-        <div id="op_text">welcome</div>
-    </div>
-    <canvas id="background"></canvas>
-    <div id="contents" style="display:none">
-        <div id="clock"></div>
-        <div id="FPS"></div>
-        <div id="tabs">
-            <a id="home" class="tabs_button" href="./index.html">Home</a>
-            <a id="gallery" class="tabs_button" href="./gallery.html">Gallery</a>
-        </div>
-        <div id="contents_title">自己紹介</div>
-        <div id="contents_text">
-            多趣味な人間です。絵を書いたり、曲作ったり、動画作ったり、プログラミングしたり、小説書いたり、ゲームしたり。<br />
-            Youtubeとか、Xとか色々やってるのでぜひフォローを。<br /><br />
-            Youtube:<a href="https://youtube.com/@3bunno1" target="_blank">https://youtube.com/@3bunno1</a><br /><br />
-            Twitter:<a href="https://twitter.com/HappyWorld1122" target="_blank">https://twitter.com/HappyWorld1122</a><br /><br />
-            Twitter(KOSEN):<a href="https://twitter.com/1on3e" target="_blank">https://twitter.com/1on3e</a><br /><br />
-            GitHub:<a href="https://github.com/sanma2525" target="_blank">https://github.com/sanma2525</a><br /><br />
-            ニコニコ動画:<a href="https://www.nicovideo.jp/user/125722671" target="_blank">https://www.nicovideo.jp/user/125722671</a><br /><br />
-            小説家になろう:<a href="https://mypage.syosetu.com/2508312/" target="_blank">https://mypage.syosetu.com/2508312/</a><br /><br />
-            なにも書くことがないので、使用ソフトでも書こうかな<br /><br />
-            <div id="indent">イラスト：medibang paint pro<br /><br /></div>
-            <div id="indent">DAW: Cakewalk by bandlab<br /><br /></div>
-            <div id="indent">動画編集: AviUtl , YukkuriMovieMaker4 <br /><br /></div>
-            <div id="indent">開発：VisualStudio<br /><br /></div>
-            <div id="indent">3DCG:blender<br /><br /></div>
-            <div id="indent">ゲーム：原神、スタレ、鳴潮、音ゲー全般<br /><br /></div>
-            勉強は嫌いです
-            <br />
-            厄介パソコンオタ名乗ってるのでスペック自慢したい。<br />
-            メインデスクトップ
-            <div id="indent">CPU:AMD Ryzen 7 5700X<br /></div>
-            <div id="indent">MEM:DDR4-3200 32GB<br /></div>
-            <div id="indent">GPU:GeForce RTX4070Ti<br /></div>
-            ノート(ASUS Zenbook14)
-            <div id="indent">CPU:Intel Core Ultra5 125h<br /></div>
-            <div id="indent">MEM:DDR4-3200 16GB<br /></div>
-            <div id="indent">GPU:内蔵GPU(7コア Arc)<br /></div>
-        </div>
-    </div>
+                <div id="works">
+                    <div id="video">
+                        <div id="video_text">
+                            <h2>動画・音楽</h2>
+                            <p>動画はYoutubeとニコニコ動画に投稿しています。</p>
+                            <p>メインチャンネル(音楽): <a href="https://youtube.com/@3bunno1" target="_blank">https://youtube.com/@3bunno1</a></p>
+                            <p>サブチャンネル(ゲーム実況だったり): <a href="https://youtube.com/@6bunno1" target="_blank">https://youtube.com/@6bunno1</a></p>
+                            <p>ニコニコ: <a href="https://www.nicovideo.jp/user/125722671" target="_blank">https://www.nicovideo.jp/user/125722671</a></p>
+                        </div>
+                    </div>
 
-    <footer>
-        Logos are the property of their respective companies.<br />
-        Copyright © 三分の一 All rights reserved<br />
-        サイト内のいかなるコンテンツの無断利用・転載を禁止します。
-    </footer>
-    <script src="./main.js"></script>
-    <script type="module" src="./three.js"></script>
-</body>
+                    <div id="illustrations">
+                        <div id="illustration_text">
+                            <h2>イラスト</h2>
+                            <p>イラストはそこまで上手くないので単体ではTwitterなどに公開していないのですが、</p>
+                            <p>アイコンやMVのイラストなどは自分で描いています。</p>
+                        </div>
+                        <div id="illustration_image">
+                            <img id="illustration_img" src="images/heat_abnormal.png" alt="熱異常" />
+                            <img id="illustration_img" src="images/unknown_mother_goose.png" alt="アンノウン・マザーグース" />
+                        </div>
+                        <div id="art_title">
+                            <p id="art_title_text">熱異常 remix MV</p>
+                            <p id="art_title_text">アンノウン・マザーグース remix MV</p>
+                        </div>
+                    </div>
+
+                    <div id="program">
+                        <div id="program_text">
+                            <h2>プログラミング</h2>
+                            <p>そんなに凝ったプログラムはかけないのですが、このサイトは自分で作りました。</p>
+                        </div>
+                        <div id="program_list">
+                            <p>2024マジカルミライ プロコン 出展(落選)作品</p>
+                            <p>PC専用アプリです。</p>
+                            <h3><a href="https://sanma2525.github.io/Magical_Mirai_2024/" target="_blank">DeskTopMikumusic!</a></h3>
+                            <br/>
+                            
+                            <p>旧ホームページ</p>
+                            <p>昔のブログ風を演じたけれどただダサくなったサイト。</p>
+                            <p>イキってthree.jsを使ったせいで激重サイトになった。</p>
+                            <h3><a href="https://sanma2525.github.io/old_homepage/index.html" target="_blank">旧ホームページ</a></h3>
+                            <br/>
+                            
+                            <p>阿部寛のスロット</p>
+                            <p>中3の1,2月とかいう受験期真っ最中にChromeBookで作ったアホプログラム。</p>
+                            <h3><a href="https://sanma2525.github.io/srot" target="_blank">阿部寛のスロット</a></h3>
+                            <br/>
+
+                            <p>その他</p>
+                            <p>その他細かいもので、discordリマインダーbotの自作、AutoMixを再現しようとした残骸だったりetc...</p>
+                        </div>
+                    </div>
+
+                    <div id="links">
+                        <div id="links_text">
+                            <h2>各種リンク</h2>
+                            <p>Youtube(メイン): <a href="https://youtube.com/@3bunno1" target="_blank">https://youtube.com/@3bunno1</a></p>
+                            <p>Youtube(サブ): <a href="https://youtube.com/@6bunno1" target="_blank">https://youtube.com/@6bunno1</a></p>
+                            <p>ニコニコ動画: <a href="https://www.nicovideo.jp/user/125722671" target="_blank">https://www.nicovideo.jp/user/125722671</a></p>
+                            <p>X(メイン): <a href="https://x.com/HappyWorld1122" target="_blank">https://x.com/HappyWorld1122</a></p>
+                            <p>X(KOSEN): <a href="https://x.com/1on3e" target="_blank">https://x.com/1on3e</a></p>
+                            <p>GitHub:<a href="https://github.com/sanma2525" target="_blank">https://github.com/sanma2525</a></p><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./animation.js"></script>
+    </body>
 </html>
