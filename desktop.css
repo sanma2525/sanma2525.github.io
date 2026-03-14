@@ -143,3 +143,4 @@ input:focus + .slider {
      /* 画像が歪まないようにアスペクト比を維持 */
      object-fit: cover;
 }
+
