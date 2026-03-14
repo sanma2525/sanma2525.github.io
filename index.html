@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>三分の一 / HappyWorld(Beta)</title>
-        <div id="style"><link rel="stylesheet" href="./style_pc.css"></div>
+        <div id="style"><link rel="stylesheet" href="./desktop.css"></div>
         <link rel="stylesheet" href="./style.css">
     </head>
-    <body onload="document.querySelectorAll('.circle1, .circle2, .circle3, .circle4').forEach(moveCircle)">
+    <body onload="document.querySelectorAll('.circle1, .circle2, .circle3, .circle4').forEach(moveCircle), isPhone()">
         <div id="background">
             <div class="circles">
                 <div class="circle1"></div>
@@ -23,19 +23,21 @@
                 <div id="title">
                     三分の一 / HappyWorld (Beta)
                 </div>
-                <div id="toggleDark">
-                        ダークモード<label class="switch">
-                        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div id="link">
-                    <a style="text-decoration: none;" href="https://twitter.com/HappyWorld1122" target="_blank">
-                        <img class="logos" src="logos/x-logo.png" alt="twitter" />
-                    </a>
-                    <a style="text-decoration: none;" href="https://youtube.com/@3bunno1" target="_blank">
-                        <img class="logos" src="logos/youtube.png" alt="YouTube" />
-                    </a>
+                <div id="shortcut">
+                    <div id="toggleDark">
+                            ダークモード<label class="switch">
+                            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="link">
+                        <a style="text-decoration: none;" href="https://twitter.com/HappyWorld1122" target="_blank">
+                            <img class="logos" src="logos/x-logo.png" alt="twitter" />
+                        </a>
+                        <a style="text-decoration: none;" href="https://youtube.com/@3bunno1" target="_blank">
+                            <img class="logos" src="logos/youtube.png" alt="YouTube" />
+                        </a>
+                    </div>
                 </div>
             </header>
             <!--<div id="tabs">
@@ -129,5 +131,6 @@
             <footer>©2026 三分の一 / HappyWorld <br/> 掲載されているいかなるコンテンツの無断使用・転用を禁止します。</footer>
         </div>
         <script src="./animation.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>

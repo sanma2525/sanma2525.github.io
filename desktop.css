@@ -1,0 +1,145 @@
+header{
+    position: relative;
+    display:  flex;
+    margin: 20px 10% 20px 10%;
+    background-color: var(--transparent-bg); /* 半透明の白 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width : 80%;
+    
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#title {
+    position: relative;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#shortcut{
+    position: relative;
+    display: flex;
+    margin-left:auto
+}
+
+#link {
+    position: relative;
+    margin: 20px;
+    right: 0px;
+}
+
+.logos {
+    width: auto;
+    height: 50px;
+    margin-left: 10px;
+}
+
+#toggleDark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+}
+
+/* 本物のチェックボックスは隠す */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* スライダー（土台）のスタイル */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc5a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: .4s;
+  border-radius: 34px; /* 丸み */
+}
+
+/* 丸いツマミ部分（擬似要素） */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.473);
+}
+
+/* チェックが入った時の土台の色 */
+input:checked + .slider {
+  background-color: #2195f3cc;
+}
+
+/* チェックが入った時のツマミの移動 */
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* フォーカス時のアウトライン（アクセシビリティ対応） */
+input:focus + .slider {
+  box-shadow: 0 0 3px #2196F3;
+}
+
+#introduce{
+    position: relative;
+    display:  flex;
+    margin: 10px 5% 10px 5%;
+    width: 90%;
+    height: 100%;
+    background-color: var(--transparent-bg-contents); /* 半透明の白 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+#intro_text{
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    margin-bottom : 20px;
+}
+
+#intro_img{
+    position: relative;
+    top: 20%;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    /* ここが心臓部（50%指定） */
+     border-radius: 50%;
+     /* 画像が歪まないようにアスペクト比を維持 */
+     object-fit: cover;
+}
