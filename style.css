@@ -373,3 +373,7 @@ h2{
     gap: 10px;
     z-index: 10; /* スライダーを背景より前面に配置 */
 }
+
+footer{
+    position: fixed;
+}
