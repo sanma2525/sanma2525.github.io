@@ -143,6 +143,7 @@ h2{
 
 #background {
     position: fixed;
+    background-color: var(--bg-color); /* 背景は白 */
     top: 0;
     left: 0;
     width: 100dvh;
