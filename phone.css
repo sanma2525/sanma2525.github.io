@@ -127,8 +127,10 @@ input:focus + .slider {
 #intro_text{
     position: relative;
     display: block;
+    margin-right: 20px;
     margin-left: 20px;
     margin-bottom : 20px;
+    font-size: 12px;
 }
 
 #intro_img{
@@ -139,4 +141,18 @@ input:focus + .slider {
      border-radius: 50%;
      /* 画像が歪まないようにアスペクト比を維持 */
      object-fit: cover;
+}
+
+#content {
+    position: relative;
+    margin: 0 5% 20px 5%;
+    background-color: var(--transparent-bg); /* 半透明の白 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width : 90%;
+    font-size: 12px;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
