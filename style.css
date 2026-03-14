@@ -376,4 +376,7 @@ h2{
 
 footer{
     position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: rgba(0, 0, 0, 0.3)
 }
